@@ -12,11 +12,9 @@ Welcome to the **Royal Cars** project! This is a web application designed for a 
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript (React.js)
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB (or your choice of database)
-- **Authentication**: JWT (JSON Web Token)
-- **Hosting**: Deployed on [Hosting Service Name] (e.g., Heroku, Netlify)
+- **Frontend**: HTML, CSS, JavaScript, SCSS
+- **Responsive Design**: Built to be mobile-friendly with CSS media queries.
+- **Interactivity**: JavaScript used for interactive features such as the car booking system and search filters.
 
 ## Getting Started
 
@@ -26,9 +24,8 @@ To get a local copy of the project up and running, follow these simple steps.
 
 Make sure you have the following installed:
 
-- **Node.js** (with npm)
-- **MongoDB** (or other database if used)
-- **Git**
+- **A modern web browser** (e.g., Chrome, Firefox)
+- **Node.js** (if you plan to use SCSS compilation)
 
 ### Installation
 
