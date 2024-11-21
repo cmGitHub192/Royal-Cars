@@ -32,4 +32,5 @@ Make sure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/your-username/Royal-Cars.git](https://github.com/cmGitHub192/Royal-Cars.git)
+   git clone https://github.com/cmGitHub192/Royal-Cars.git
+
