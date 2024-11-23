@@ -1,0 +1,50 @@
+# Node.js modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Database-related files
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Docker files and folders
+docker-compose.override.yml
+.dockerignore
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+
+# Generated files
+public/build/
+public/dist/
+coverage/
+*.lock
+
+# Temporary files
+*.tmp
+*.temp
+
+# Dependency lockfiles (optional, depending on your workflow)
+# Uncomment the following lines if you want to exclude lockfiles:
+# package-lock.json
+# yarn.lock
+
+# Static files for deployment
+build/
+dist/
