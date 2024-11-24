@@ -15,9 +15,16 @@ const PORT = process.env.PORT || 3000;
 // Middleware para parsear JSON
 app.use(express.json());
 
-// Middleware para servir archivos estáticos desde la carpeta "public"
-const publicPath = path.join(__dirname, "../public");
-app.use(express.static(publicPath));
+app.set("trust proxy", true);
+
+const cors = require("cors");
+app.use(cors());
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Algo salió mal.");
+});
+
 
 // Importar rutas
 const locationRoutes = require("./routes/locationRoutes");
