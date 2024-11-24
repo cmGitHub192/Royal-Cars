@@ -4,9 +4,9 @@
 
 const newLocation = {
     name: "Sucursal Centro",
-    address: "Avenida Central 123",
-    city: "Ciudad de Prueba",
-    country: "País de Ejemplo",
+    address: "Avenida Central 678",
+    city: "Cuenca",
+    country: "Ecuador",
   };
   
   // Llamar a la función para crear una ubicación
