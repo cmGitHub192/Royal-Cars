@@ -24,7 +24,7 @@ Royal Cars es una API para gestionar reservas de autos. Permite realizar operaci
 - **Node.js** (v14 o superior)
 - **npm** (v6 o superior)
 - **Docker** (v20 o superior)
-
+- **Angular* (Ultima version)
 ---
 
 ## **Instalación**
