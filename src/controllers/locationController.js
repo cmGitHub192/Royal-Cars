@@ -24,7 +24,7 @@ exports.createLocation = async (req, res) => {
 exports.getAllLocations = async (req, res) => {
   try {
     const locations = await Location.findAll({
-      include: [{ model: Car, as: "Car", attributes: ["brand", "model"] }],
+      include: [{ model: Car, as: "Cars", attributes: ["brand", "model"] }],
     });
     res.status(200).json(locations);
   } catch (error) {
@@ -37,7 +37,7 @@ exports.getAllLocations = async (req, res) => {
 exports.getLocationById = async (req, res) => {
   try {
     const location = await Location.findByPk(req.params.id, {
-      include: [{ model: Car, as: "Car", attributes: ["brand", "model"] }],
+      include: [{ model: Car, as: "Cars", attributes: ["brand", "model"] }],
     });
     if (!location) {
       return res.status(404).json({ error: "Ubicación no encontrada" });
