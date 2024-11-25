@@ -1,0 +1,12 @@
+<div *ngIf="cars.length > 0; else noResults">
+    <h3>Resultados de búsqueda:</h3>
+    <ul>
+      <li *ngFor="let car of cars">
+        <p>{{ car.brand }} {{ car.model }} ({{ car.year }})</p>
+        
+      </li>
+    </ul>
+  </div>
+  <ng-template #noResults>
+    <p>No se encontraron autos para esta ubicación.</p>
+  </ng-template>

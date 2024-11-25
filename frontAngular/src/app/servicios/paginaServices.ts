@@ -23,6 +23,23 @@ export class PaginaServices{
         return this._http.get(this.url+'api/location',{headers:headers});
     }
 
+    //http://localhost:3000
+    searchCars(filters: { locationId?: number; brand?: string; model?: string }): Observable<Car[]> {
+        const params: any = {};
+      
+        if (filters.locationId) {
+          params.locationId = filters.locationId;
+        }
+        if (filters.brand) {
+          params.brand = filters.brand;
+        }
+        if (filters.model) {
+          params.model = filters.model;
+        }
+      
+        return this._http.get<Car[]>(`${this.url}api/car/search`, { params });
+      }
+
     //http://localhost:3000/api/car
     getAllCars():Observable<any>{
         let headers=new HttpHeaders().set('Content-Type','application/json');

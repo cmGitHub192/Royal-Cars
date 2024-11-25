@@ -10,10 +10,12 @@ import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { PaginaServices } from './servicios/paginaServices';
+import { ListadobusquedaComponent } from './componentes/listadobusqueda/listadobusqueda.component';
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent
+    InicioComponent,
+    ListadobusquedaComponent
   ],
   imports: [
     BrowserModule,
