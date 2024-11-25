@@ -23,6 +23,12 @@ export class PaginaServices{
         return this._http.get(this.url+'api/location',{headers:headers});
     }
 
+    //http://localhost:3000
+    searchCarsByLocation(locationId: number): Observable<Car[]> {
+        const url = `${this.url}api/car/search/locationId/${locationId}`;
+        return this._http.get<Car[]>(url);
+    }
+
     //http://localhost:3000/api/car
     getAllCars():Observable<any>{
         let headers=new HttpHeaders().set('Content-Type','application/json');

@@ -1,0 +1,42 @@
+
+<div class="container-fluid pt-5">
+  <div class="container-fluid page-header">
+      <h1 class="display-3 text-uppercase text-white mb-3">Gracias por rentar el auto</h1>
+      <div class="d-inline-flex text-white">
+          <h6 class="text-uppercase m-0"><a class="text-white" href=""></a>RESUMEN</h6>
+          <h6 class="text-body m-0 px-3"></h6>
+          <h6 class="text-uppercase text-body m-0"></h6>
+      </div>
+  </div>
+    <div class="container pt-5">
+      <div *ngIf="car">
+        <div class="row">
+          <div class="col-lg-8 mb-5">
+            <h1 class="display-4 text-uppercase mb-5">{{ car.brand }} {{ car.model }}</h1>
+            <div class="row mx-n2 mb-3">
+              <div class="col-md-3 col-6 px-2 pb-2">
+                <img class="img-fluid w-100" src="assets/img/car-rent-5.png" alt="{{ car.brand }}">
+              </div>
+            </div>
+            <div class="row pt-2">
+              <div class="col-md-3 col-6 mb-2">
+                <i class="fa fa-car text-primary mr-2"></i>
+                <span>Model: {{ car.year }}</span>
+              </div>
+              
+              <div class="col-md-3 col-6 mb-2">
+                <i class="fa fa-dollar-sign text-primary mr-2"></i>
+                <span>Price: {{ car.pricePerDay | currency }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mb-4">
+        <button [routerLink]="['/inicio']" class="btn btn-secondary px-4">Ir a inicio</button>
+      </div>
+      <div *ngIf="!car">
+        <p class="text-center">Loading car details...</p>
+      </div>
+    </div>
+  </div>

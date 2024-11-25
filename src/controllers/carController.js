@@ -89,3 +89,25 @@ exports.deleteCar = async (req, res) => {
     res.status(500).json({ error: "Error al eliminar el auto" });
   }
 };
+
+//Buscar por criterios
+exports.searchCars = async (req, res) => {
+  try {
+    const { locationId } = req.params;
+
+    if (!locationId) {
+      return res.status(400).json({ error: "Falta el parámetro locationId" });
+    }
+
+    const cars = await Car.findAll({ where: { locationId } });
+
+    if (cars.length === 0) {
+      return res.status(404).json({ error: "No se encontraron coches para esta ubicación" });
+    }
+
+    res.status(200).json(cars);
+  } catch (error) {
+    console.error("Error en searchCars:", error.message);
+    res.status(500).json({ error: "Error al buscar coches" });
+  }
+};
