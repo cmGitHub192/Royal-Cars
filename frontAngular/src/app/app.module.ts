@@ -11,11 +11,17 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
 import { PaginaServices } from './servicios/paginaServices';
 import { ListadobusquedaComponent } from './componentes/listadobusqueda/listadobusqueda.component';
+import { ResumenComponent } from './componentes/resumen/resumen.component';
+import { HeaderComponent } from './componentes/header/header.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    ListadobusquedaComponent
+    ListadobusquedaComponent,
+    ResumenComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

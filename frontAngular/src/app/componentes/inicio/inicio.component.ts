@@ -15,9 +15,8 @@ export class InicioComponent implements OnInit{
   public ubicacion: Locations[]
   public cars : Car[]
   public url: string
-  locationId: number = 1; // Valor por defecto
-  brand: string = ''; // Valor por defecto
-  model: string = ''; // Valor por defecto
+  selectedLocationId: number | null = null; // ID de la ubicación seleccionada
+  selectedCarId: number | null = null;
   constructor(
     private ubicacionService: PaginaServices,
     private router: Router
@@ -46,21 +45,19 @@ export class InicioComponent implements OnInit{
       response => {
         if (response) {
           this.cars = response
-          console.log(this.locationId)
         }
       }
     )
   }
 
   onSearch(): void {
-    // Redirige a la página de listado con los parámetros seleccionados
-    this.router.navigate(['/listadobusqueda'], {
-      queryParams: {
-        locationId: this.locationId || null,
-        brand: this.brand || null,
-        model: this.model || null,
-      },
-    });
+    // Verifica si hay una ubicación y coche seleccionados
+    if (this.selectedLocationId && this.selectedCarId) {
+      // Redirige a la página de búsqueda con los parámetros de los filtros
+      this.router.navigate(['/listadobusqueda', this.selectedCarId]);
+    } else {
+      alert('Por favor, selecciona una ubicación y un coche.');
+    }
   }
 
 }

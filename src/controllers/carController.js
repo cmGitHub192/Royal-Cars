@@ -93,9 +93,7 @@ exports.deleteCar = async (req, res) => {
 //Buscar por criterios
 exports.searchCars = async (req, res) => {
   try {
-    console.log("Parámetros recibidos:", req.query);
-
-    const { locationId } = req.query;
+    const { locationId } = req.params;
 
     if (!locationId) {
       return res.status(400).json({ error: "Falta el parámetro locationId" });

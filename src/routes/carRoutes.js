@@ -8,6 +8,6 @@ router.get("/", carController.getAllCars);
 router.get("/:id", carController.getCarById);
 router.put("/:id", carController.updateCar);
 router.delete("/:id", carController.deleteCar);
-router.get('/search', carController.searchCars); //Buscar search
+router.get('/search/locationId/:locationId', carController.searchCars); //Buscar search
 
 module.exports = router;
