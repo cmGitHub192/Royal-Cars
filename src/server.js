@@ -15,16 +15,23 @@ const PORT = process.env.PORT || 3000;
 // Middleware para parsear JSON
 app.use(express.json());
 
+// Configurar proxy inverso
 app.set("trust proxy", true);
 
+// Configurar CORS
 const cors = require("cors");
-app.use(cors());
+const corsOptions = {
+   origin: '*', // Permitir cualquier origen
+   credentials: true, // access-control-allow-credentials
+   optionSuccessStatus: 200, // Responder con este código para solicitudes OPTIONS exitosas
+};
+app.use(cors(corsOptions));
 
+// Middleware para manejo de errores
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Algo salió mal.");
 });
-
 
 // Importar rutas
 const locationRoutes = require("./routes/locationRoutes");
@@ -40,7 +47,7 @@ app.use("/api/person", personRoutes);
 app.use("/api/availability", availabilityRoutes);
 app.use("/api/reservation", reservationRoutes);
 
-// Sincronizar modelos y iniciar el servidor
+// Sincronizar modelos y arrancar el servidor
 sequelize.sync({ alter: true })
   .then(() => {
     console.log("Modelos sincronizados con la base de datos");
@@ -51,4 +58,3 @@ sequelize.sync({ alter: true })
   .catch((error) => {
     console.error("Error al sincronizar modelos:", error);
   });
-
